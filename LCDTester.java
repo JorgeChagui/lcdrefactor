@@ -1,3 +1,6 @@
+package lcdrefactor;
+
+import lcdrefactor.LCD.LCD;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -52,14 +55,16 @@ public class LCDTester {
                 }while (!comando.equalsIgnoreCase(CADENA_FINAL)); 
             }
 
-            ImpresorLCD impresorLCD = new ImpresorLCD();
-
+            //ImpresorLCD impresorLCD = new ImpresorLCD();
+            LCD lcd = new LCD();
+            
             Iterator<String> iterator = listaComando.iterator();
             while (iterator.hasNext()) 
             {
                 try 
                 {
-                    impresorLCD.procesar(iterator.next(), espacioDig);
+                    //impresorLCD.procesar(iterator.next(), espacioDig);
+                    lcd.imprimir(iterator.next(), espacioDig);
                 } catch (Exception ex) 
                 {
                     System.out.println("Error: "+ex.getMessage());
