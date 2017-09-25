@@ -256,13 +256,13 @@ public class ImpresorLCD {
 
             this.pf2[0] = (this.filasDig / 2);
             this.pf2[1] = 0 + pivotX;
-            
+
             this.pf3[0] = (this.filasDig - 1);
             this.pf3[1] = 0 + pivotX;
-            
+
             this.pf4[0] = (this.columDig - 1);
             this.pf4[1] = (this.filasDig / 2) + pivotX;
-            
+
             this.pf5[0] = 0;
             this.pf5[1] = (this.columDig - 1) + pivotX;
 
@@ -271,13 +271,7 @@ public class ImpresorLCD {
             adicionarDigito(numero);
         }
 
-        // Imprime matriz
-        for (int i = 0; i < this.totalFilas; i++) {
-            for (int j = 0; j < this.totalColum; j++) {
-                System.out.print(this.matrizImpr[i][j]);
-            }
-            System.out.println();
-        }
+        
     }
 
     /**
@@ -289,7 +283,7 @@ public class ImpresorLCD {
      * el numero a imprimir
      * @param espacioDig Espacio Entre digitos
      */
-    public void procesar(String comando, int espacioDig) {
+    public String[][] procesar(String comando, int espacioDig) {
 
         String[] parametros;
 
@@ -331,7 +325,7 @@ public class ImpresorLCD {
 
         // Realiza la impresion del numero
         imprimirNumero(tam, parametros[1], espacioDig);
-
+        return matrizImpr;
     }
 
     /**

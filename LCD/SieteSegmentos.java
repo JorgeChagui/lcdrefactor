@@ -11,40 +11,40 @@ package lcdrefactor.LCD;
  */
 public class SieteSegmentos extends CaracterImplementor {
 
-    private int[] pf1;
-    private int[] pf2;
-    private int[] pf3;
-    private int[] pf4;
-    private int[] pf5;
+    private int[] puntoFijoBottomLeft;
+    private int[] puntoFijoMiddleLeft;
+    private int[] puntoFijoTopLeft;
+    private int[] puntoFijoMiddleRight;
+    private int[] puntoFijoBottomRight;
 
     public SieteSegmentos() {
 
     }
 
     private void iniciarPuntosFijos() {
-        this.pf1 = new int[2];
-        this.pf2 = new int[2];
-        this.pf3 = new int[2];
-        this.pf4 = new int[2];
-        this.pf5 = new int[2];
+        this.puntoFijoBottomLeft = new int[2];
+        this.puntoFijoMiddleLeft = new int[2];
+        this.puntoFijoTopLeft = new int[2];
+        this.puntoFijoMiddleRight = new int[2];
+        this.puntoFijoBottomRight = new int[2];
     }
 
     //Calcula los puntos fijos que se usarán para ubicar cada segmento en la matriz
     private void calcularPuntosFijos(int filas, int columnas) {
-        this.pf1[0] = 0;
-        this.pf1[1] = 0;
+        this.puntoFijoBottomLeft[0] = 0;
+        this.puntoFijoBottomLeft[1] = 0;
 
-        this.pf2[0] = (filas / 2);
-        this.pf2[1] = 0;
+        this.puntoFijoMiddleLeft[0] = (filas / 2);
+        this.puntoFijoMiddleLeft[1] = 0;
 
-        this.pf3[0] = (filas - 1);
-        this.pf3[1] = 0;
+        this.puntoFijoTopLeft[0] = (filas - 1);
+        this.puntoFijoTopLeft[1] = 0;
 
-        this.pf4[0] = (columnas - 1);
-        this.pf4[1] = (filas / 2);
+        this.puntoFijoMiddleRight[0] = (columnas - 1);
+        this.puntoFijoMiddleRight[1] = (filas / 2);
 
-        this.pf5[0] = 0;
-        this.pf5[1] = (columnas - 1);
+        this.puntoFijoBottomRight[0] = 0;
+        this.puntoFijoBottomRight[1] = (columnas - 1);
 
     }
 
@@ -185,37 +185,37 @@ public class SieteSegmentos extends CaracterImplementor {
 
     //Métodos para agregar los segmentos del 1 al 7
     protected void agregarSegmentoUno(int size, String[][] matriz) {
-        adicionarLinea(matriz, size, pf1, LCDOpcionesImpresion.POSICION_Y,
+        adicionarLinea(matriz, size, puntoFijoBottomLeft, LCDOpcionesImpresion.POSICION_Y,
                 LCDOpcionesImpresion.CARACTER_VERTICAL.toString());
     }
 
     protected void agregarSegmentoDos(int size, String[][] matriz) {
-        adicionarLinea(matriz, size, pf2, LCDOpcionesImpresion.POSICION_Y,
+        adicionarLinea(matriz, size, puntoFijoMiddleLeft, LCDOpcionesImpresion.POSICION_Y,
                 LCDOpcionesImpresion.CARACTER_VERTICAL.toString());
     }
 
     protected void agregarSegmentoTres(int size, String[][] matriz) {
-        adicionarLinea(matriz, size, pf5, LCDOpcionesImpresion.POSICION_Y,
+        adicionarLinea(matriz, size, puntoFijoBottomRight, LCDOpcionesImpresion.POSICION_Y,
                 LCDOpcionesImpresion.CARACTER_VERTICAL.toString());
     }
 
     protected void agregarSegmentoCuatro(int size, String[][] matriz) {
-        adicionarLinea(matriz, size, pf4, LCDOpcionesImpresion.POSICION_Y,
+        adicionarLinea(matriz, size, puntoFijoMiddleRight, LCDOpcionesImpresion.POSICION_Y,
                 LCDOpcionesImpresion.CARACTER_VERTICAL.toString());
     }
 
     protected void agregarSegmentoCinco(int size, String[][] matriz) {
-        adicionarLinea(matriz, size, pf1, LCDOpcionesImpresion.POSICION_X,
+        adicionarLinea(matriz, size, puntoFijoBottomLeft, LCDOpcionesImpresion.POSICION_X,
                 LCDOpcionesImpresion.CARACTER_HORIZONTAL.toString());
     }
 
     protected void agregarSegmentoSeis(int size, String[][] matriz) {
-        adicionarLinea(matriz, size, pf2, LCDOpcionesImpresion.POSICION_X,
+        adicionarLinea(matriz, size, puntoFijoMiddleLeft, LCDOpcionesImpresion.POSICION_X,
                 LCDOpcionesImpresion.CARACTER_HORIZONTAL.toString());
     }
 
     protected void agregarSegmentoSiete(int size, String[][] matriz) {
-        adicionarLinea(matriz, size, pf3, LCDOpcionesImpresion.POSICION_X,
+        adicionarLinea(matriz, size, puntoFijoTopLeft, LCDOpcionesImpresion.POSICION_X,
                 LCDOpcionesImpresion.CARACTER_HORIZONTAL.toString());
     }
 }

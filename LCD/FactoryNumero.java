@@ -58,8 +58,6 @@ public class FactoryNumero {
             case '0':
                 return new Cero(size, new SieteSegmentos());
             default:
-//                throw new IllegalArgumentException("Caracter " + caracter
-//                        + " no es un digito");
                 return null;
         }
     }
