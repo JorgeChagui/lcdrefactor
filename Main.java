@@ -27,7 +27,7 @@ public class Main {
                 System.out.println("Seleccionar opción: "
                         + "\n 1. Ejecutar LCD manual. "
                         + "\n 2. Ejecutar prueba automáticas."
-                        + "\n Salir con cualquier otro número.");
+                        + "\n Salir con cualquier otra entrada.");
                 opcion = lector.nextInt();
 
                 if (opcion == 1) {
